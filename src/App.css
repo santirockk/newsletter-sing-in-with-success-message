@@ -1,0 +1,33 @@
+body {
+    min-width: 375px;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: hsl(235, 18%, 26%);
+}
+
+
+.attribution { 
+    margin-top: 20px;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+}
+
+.attribution a { color: hsl(228, 85%, 74%); }
+
+.form__input_v {
+    background-color: #ffe8e6;
+    border-color: hsl(4, 100%, 67%);
+    color: hsl(4, 100%, 67%);
+
+}
+
+@media screen and (min-width: 1007px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
