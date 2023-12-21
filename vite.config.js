@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/newsletter-sing-in-with-success-message/",
   plugins: [react()],
-  base: '/newsletter-sign-in-with-success-message/',
 })

@@ -1,74 +1,33 @@
-import { useState, useEffect } from 'react'
-import { SignUpMobile } from './components/singup_mobile/mobile';
-import { SuccessMobile } from './components/successMobile/successMobile';
-import { Singup } from './components/singup/singup';
-import './App.css';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-const [success, setSuccess] = useState(false); 
-const [isMobile, setIsMobile] = useState(false);
-const [error, setError] = useState('');
-const [email, setEmail] = useState('ash@loremcompany.com');
-const [inputVariant, setInputVariant] = useState()
-
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-useEffect(() => {
-  if (window.innerWidth < 1007) {
-    setIsMobile(true);
-  }
-}, [])
-
-
-const onSubmit = evt => {
-  evt.preventDefault();
-  if (emailRegex.test(evt.currentTarget.elements.email.value)) {
-    setEmail(evt.currentTarget.elements.email.value);
-    setSuccess(true);
-  } else {
-    setError("Valid email required")
-    setInputVariant("form__input_v")
-  }
-}
-
-const onClickSuccess = evt => {
-  setError("")
-  setInputVariant()
-  setSuccess(false);
-}
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1007) {
-    setIsMobile(false);
-  } else {
-    setIsMobile(true);
-  }
-} )
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      { !success && isMobile && (
-        <SignUpMobile 
-          onSubmit={onSubmit} 
-          error={error}
-          inputVariant={inputVariant}
-      />
-      )}
-        { !success && !isMobile && (
-        <Singup 
-          onSubmit={onSubmit}
-          error={error}
-          inputVariant={inputVariant}
-        />
-      )}
-      { success && (
-        <SuccessMobile 
-          onClick={onClickSuccess} 
-          email={email}
-        />
-      )}
-    
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
 }
