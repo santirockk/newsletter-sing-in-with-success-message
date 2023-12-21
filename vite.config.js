@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Frontend-Mentor-newletter-sign-in-with-success-message/',
+  base: '/newsletter-sign-in-with-success-message/',
 })
