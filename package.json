@@ -1,9 +1,9 @@
 {
-  "name": "newslatter-sign-up-with-success-message",
+  "name": "newsletter-sign-up-with-success-message",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://santirockk.github.io/newsletter-sign-in-with-success-message",
+  "homepage": "https://santirockk.github.io/newsletter-sign-in-with-success-message/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
